@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import { Auth0Provider } from '@auth0/auth0-react';
+// import { Auth0Provider } from '@auth0/auth0-react';
 import './index.css'
 import App from './App.jsx'
 
@@ -10,15 +10,15 @@ createRoot(document.getElementById('root')).render(
 
   <BrowserRouter>
     <StrictMode>
-      <Auth0Provider
+      {/* <Auth0Provider
         domain={import.meta.env.VITE_AUTH_AUTH_DOMAIN}
         clientId={import.meta.env.VITE_AUTH_AUTH_CLIENT_ID}
         authorizationParams={{
           redirect_uri: window.location.origin
         }}
-      >
+      > */}
         <App />
-      </Auth0Provider>
+      {/* </Auth0Provider> */}
     </StrictMode>
   </BrowserRouter>
 
