@@ -90,7 +90,7 @@ const HomeScree = ({ setSearch, onFocusChange, recentSearch, recentData, preview
                 const formdata = new FormData();
                 formdata.append('image', file);
 
-                const reponse = await axios.post('http://localhost:5000/api/searchbyimage', formdata, {
+                const reponse = await axios.post('https://pixelclone.onrender.com/api/searchbyimage', formdata, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -108,7 +108,7 @@ const HomeScree = ({ setSearch, onFocusChange, recentSearch, recentData, preview
                 }
             }
             else if (imageURL) {
-                const reponse = await axios.post('http://localhost:5000/api/searchbyurl', {
+                const reponse = await axios.post('https://pixelclone.onrender.com/api/searchbyurl', {
                     imageurl: imageURL,
                 });
 

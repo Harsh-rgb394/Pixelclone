@@ -10,7 +10,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const HeaderSearchPage = ({ searchTerm, setSearch, recentData, onFocusChange, recentSearch, preview,
     setPreview }) => {
-    
+
     const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
     const [isModalOpen, setisModalOpen] = useState(false);
     console.log("current user", user);
@@ -111,7 +111,7 @@ const HeaderSearchPage = ({ searchTerm, setSearch, recentData, onFocusChange, re
                 const formdata = new FormData();
                 formdata.append('image', file);
 
-                const reponse = await axios.post('http://localhost:5000/api/searchbyimage', formdata, {
+                const reponse = await axios.post('https://pixelclone.onrender.com/api/searchbyimage', formdata, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -129,7 +129,7 @@ const HeaderSearchPage = ({ searchTerm, setSearch, recentData, onFocusChange, re
                 }
             }
             else if (imageURL) {
-                const reponse = await axios.post('http://localhost:5000/api/searchbyurl', {
+                const reponse = await axios.post('https://pixelclone.onrender.com/api/searchbyurl', {
                     imageurl: imageURL,
                 });
 
@@ -166,7 +166,7 @@ const HeaderSearchPage = ({ searchTerm, setSearch, recentData, onFocusChange, re
 
     const imagebackend = async () => {
         try {
-            const response = await axios.post("http://localhost:5000/api/searchbybase", {
+            const response = await axios.post("https://pixelclone.onrender.com/api/searchbybase", {
                 base64: preview.split(",")[1]
             }, {
                 headers: {
