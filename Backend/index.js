@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended:true,limit:'50mb'}));
 
 
 app.get("/",(req,res)=>{
-    req.send("Hello from server")
+    res.send("Hello from server")
 })
 
 app.use("/api",require("./routes/ApiRoute"))
